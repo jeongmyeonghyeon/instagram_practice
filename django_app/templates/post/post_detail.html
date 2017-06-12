@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post Detail</title>
+</head>
+<body>
+    <div>{{post.author}}</div>
+    <div>{{post.photo}}</div>
+    <div>{{post.created_date}}</div>
+    <div>{{post.modified_date}}</div>
+    <div>{{post.like_count}}</div>
+    <a href="/post/{{post.id}}/delete">삭제하기</a>
+</body>
+</html>

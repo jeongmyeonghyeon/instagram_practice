@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% for post in posts %}
+        <div>
+            <span><a href="/post/{{post.id}}/detail">{{ post.id }}</a></span>
+            <!--<span>{{ post.photo }}</span>-->
+            <!--<img src="{{ post.photo }}" alt="">-->
+            {% for comment in post.comment_set.all|slice:":4" %}
+                <br>
+                <span>{{ comment.author }}</span><br>
+                <span>{{ comment.content }}</span><br>
+                <span>{{ comment.created_date }}</span>
+                <span>{{ comment.modified_date }}</span><br>
+                <span>{{ comment.like_count }}</span><br>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <a href="/post/create">포스트 만들</a>
+</body>
+</html>
